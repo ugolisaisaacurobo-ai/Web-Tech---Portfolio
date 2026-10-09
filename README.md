@@ -4,7 +4,7 @@ A personal portfolio website built for **ICT251 Web Technologies** at Mulungushi
 It improves my Activity 2 page with a professional design, a responsive layout and four JavaScript features.
 It is a plain HTML5, CSS and JavaScript static site (no build step), published on Render through GitHub.
 
-**Live website:** _add your onrender.com link here_
+**Live website:** _https://web-tech-portfolio-xid0.onrender.com_
 
 ## Folder structure
 
