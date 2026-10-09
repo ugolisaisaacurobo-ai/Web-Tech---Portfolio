@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal student portfolio of Ugolisa Isaac Urobo, Mulungushi University, ICT251 Web Technologies.">
+  <title>Ugolisa's Student Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="topbar">
+      <a class="brand" href="#top">Ugolisa</a>
+
+      <div class="topbar-actions">
+        <button id="theme-toggle" class="btn-small" type="button">Dark mode</button>
+        <button id="menu-toggle" class="btn-small menu-toggle" type="button"
+                aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#about">About Me</a>
+        <a href="#hobbies">My Hobbies</a>
+        <a href="#projects">Projects &amp; Skills</a>
+        <a href="#learning-plan">My Learning Plan</a>
+        <a href="#photos">My Photos</a>
+        <a href="#media">My Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>Ugolisa Isaac Urobo</h1>
+      <p class="hero-programme">Information Technology student, Mulungushi University</p>
+      <p class="hero-intro">
+        I am learning to build websites in ICT251 Web Technologies. This page shows who I am,
+        what I am learning and the interactive features I have built with JavaScript.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#projects">View My Projects</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+      </div>
+      <p class="student-id">Student ID: 202512447</p>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="about" class="content-section">
+      <h2>About Me</h2>
+      <!-- Paragraph about me -->
+      <p>
+        My name is Ugolisa and I am a student at Mulungushi University in the School of
+        Engineering and Technology, studying Information Technology.
+        I am currently taking ICT251 Web Technologies, where I am learning how to build
+        websites using HTML, CSS and eventually JavaScript. Outside of my studies I have
+        an interest in data work and building small AI-powered tools, and I am excited
+        to combine what I learn in this course with those interests to build my own
+        web-based projects in the future.
+      </p>
+    </section>
+
+    <section id="hobbies" class="content-section">
+      <h2>My Hobbies</h2>
+      <ul class="hobby-list">
+        <li>Basketball</li>
+        <li>Gaming</li>
+        <li>Coding</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Projects &amp; Skills</h2>
+      <p>Four things I have learned in this course, and where you can see them on this page.</p>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Semantic HTML5</h3>
+          <p>
+            I structure a page with header, nav, main, section and footer, add alt text to images,
+            and label every form field so the page makes sense to everyone, including screen reader users.
+          </p>
+        </article>
+        <article class="project-card">
+          <h3>Responsive CSS</h3>
+          <p>
+            I style with external CSS, the box model, Flexbox and Grid, and a media query so the
+            layout works on both phones and computers. The light and dark themes use CSS variables.
+          </p>
+        </article>
+        <article class="project-card">
+          <h3>Interactive JavaScript</h3>
+          <p>
+            I use events and DOM updates to validate a form, flip through a photo gallery,
+            switch themes and open a mobile menu.
+          </p>
+        </article>
+        <article class="project-card">
+          <h3>GitHub and Render</h3>
+          <p>
+            I keep my code in a GitHub repository with clear commit messages, then publish it
+            as a live static website on Render.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="learning-plan" class="content-section">
+      <h2>My Learning Plan</h2>
+      <p>Steps I will take to improve my web development skills:</p>
+      <ol>
+        <li>Practice building small HTML and CSS pages every week.</li>
+        <li>Learn JavaScript fundamentals through free online tutorials.</li>
+        <li>Build and deploy a personal portfolio site on GitHub and Render.</li>
+      </ol>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Weekly Web Learning Plan</caption>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Practice Task</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>HTML structure</td>
+              <td>Rebuild this page's layout from scratch</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>CSS styling</td>
+              <td>Try a new color palette and font pairing</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>JavaScript basics</td>
+              <td>Make the nav links highlight on click</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="photos" class="content-section">
+      <h2>My Photo Gallery</h2>
+      <!-- images inside images/ -->
+      <div class="gallery" id="gallery">
+        <figure>
+          <img src="images/photo1.jpg" width="1000" height="1333"
+               alt="Close-up selfie of me smiling, wearing a navy T-shirt, in a bedroom with a cream wall">
+          <figcaption>Selfie of a genuine happy smile.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/photo2.jpg" width="1000" height="1333"
+               alt="Selfie of me outdoors in a shaded park with grass and tall trees, with a backpack strap on my shoulder">
+          <figcaption>Enjoying a sunny day outdoors.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/photo3.jpg" width="788" height="1400"
+               alt="Me sitting on a wooden cabinet in a blue jacket and patterned shirt, looking to the side, with horse paintings and potted plants behind me">
+          <figcaption>A scenic view of a man in deep thought.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Viewer controls: hidden until JavaScript runs, so the photos still show without it -->
+      <div class="gallery-controls" id="gallery-controls" hidden>
+        <button id="gallery-prev" type="button">Previous</button>
+        <span id="gallery-status" class="gallery-status" aria-live="polite">Photo 1 of 3</span>
+        <button id="gallery-next" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="media" class="content-section">
+      <h2>My Media</h2>
+
+      <h3>Introduction Video</h3>
+      <!-- Recorded video -->
+      <video controls preload="metadata">
+        <source src="videos/intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Video summary: In this short video I introduce myself, say my name and
+        programme, and mention one web skill I hope to learn this semester.
+      </p>
+
+      <h3>Audio Clip</h3>
+      <!-- Recorded audio -->
+      <audio controls preload="metadata">
+        <source src="videos/voice.m4a" type="audio/mp4">
+        Your browser does not support the audio tag.
+      </audio>
+      <p>
+        Audio summary: A short voice recording of me speaking, added to practise using
+        the HTML5 audio element with playback controls.
+      </p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact</h2>
+      <p class="demo-note"><strong>Browser demonstration only — no message is sent.</strong></p>
+      <p>Fill in the form to check your details. Nothing leaves your browser.</p>
+
+      <!-- novalidate: JavaScript shows the error messages; required attributes are kept -->
+      <form id="contact-form" action="#" novalidate>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="name-error">
+          <span class="error" id="name-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+          <span class="error" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic">
+            <option value="general">General enquiry</option>
+            <option value="feedback">Feedback</option>
+            <option value="collaboration">Collaboration</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+          <span class="error" id="message-error"></span>
+        </div>
+
+        <button type="submit">Validate and Preview</button>
+      </form>
+
+      <div id="form-result" class="form-result" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ugolisa &mdash; ICT251 Web Technologies, Mulungushi University</p>
+    <p>
+      <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank" rel="noopener">View Source on GitHub</a>
+      &nbsp;|&nbsp;
+      <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener">Learn web development: MDN Web Docs</a>
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+/* ==========================================================
+   ICT251 Activity 3 - styles.css
+   Palette: navy #14315c, blue #1e4a8a, gold #f1b400
+   Colours live in CSS variables so the theme switch can swap them.
+   ========================================================== */
+
+/* ===== Theme colours (light is the default) ===== */
+:root {
+  --bg: #f7f9fb;
+  --surface: #ffffff;
+  --surface-alt: #f1f6fa;
+  --text: #1b2430;
+  --muted: #4a5563;
+  --border: #ccd6e0;
+  --heading: #14315c;
+  --bar: #14315c;          /* header and footer background */
+  --bar-alt: #1e4a8a;      /* nav and button background */
+  --on-bar: #ffffff;
+  --gold: #f1b400;
+  --link: #1e4a8a;
+  --focus: #1e4a8a;
+  --error: #b00020;
+  --ok: #1b6e36;
+}
+
+/* Dark theme: applied when <html data-theme="dark"> is set by script.js */
+html[data-theme="dark"] {
+  --bg: #0f1722;
+  --surface: #1a2433;
+  --surface-alt: #223047;
+  --text: #e8eef6;
+  --muted: #b8c4d4;
+  --border: #3a4c66;
+  --heading: #a9cbff;
+  --bar: #0a1424;
+  --bar-alt: #2a5ea8;
+  --on-bar: #ffffff;
+  --gold: #f1b400;
+  --link: #9cc8ff;
+  --focus: #ffd24d;
+  --error: #ff9aa8;
+  --ok: #7fdc9a;
+}
+
+/* ===== Base / element selectors ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--link);
+}
+
+/* Visible keyboard focus on everything that can be tabbed to */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+video:focus-visible,
+audio:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* The header is always dark, so its focus ring is gold */
+.site-header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--gold);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  background: var(--gold);
+  color: #14315c;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* ===== Header, top bar and navigation ===== */
+.site-header {
+  background-color: var(--bar);
+  color: var(--on-bar);
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  order: 1;
+  color: var(--on-bar);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+}
+
+.site-nav {
+  order: 2;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
+}
+
+.site-nav a {
+  color: var(--on-bar);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background-color: var(--gold);
+  color: #14315c;
+}
+
+.topbar-actions {
+  order: 3;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Small buttons in the top bar */
+.btn-small {
+  background-color: transparent;
+  color: var(--on-bar);
+  border: 2px solid var(--on-bar);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.btn-small:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #14315c;
+}
+
+/* Menu button only shows on narrow screens (see media query) */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== Hero (introductory area) ===== */
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 2.75rem;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin: 0 0 0.4rem 0;
+}
+
+.hero-programme {
+  font-size: 1.2rem;
+  color: var(--gold);
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.hero-intro {
+  max-width: 60ch;
+  margin: 0 0 1.5rem 0;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.student-id {
+  margin: 1.5rem 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Link-styled buttons */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--gold);
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: #14315c;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--on-bar);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gold);
+  color: #14315c;
+}
+
+/* ===== Main content sections (class selector, reused) ===== */
+main {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.content-section {
+  background-color: var(--surface);
+  padding: 1.25rem 1.5rem;       /* box model: space inside the border */
+  margin: 1.25rem 0;             /* box model: space between sections */
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  scroll-margin-top: 1rem;
+}
+
+.content-section h2 {
+  color: var(--heading);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.4rem;
+}
+
+h3 {
+  color: var(--heading);
+}
+
+/* ===== Unique section (id selector) ===== */
+#about {
+  background-color: var(--surface-alt);
+  border-left: 6px solid var(--gold);
+}
+
+/* ===== Hobbies ===== */
+.hobby-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.hobby-list li {
+  background-color: var(--surface-alt);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  font-weight: bold;
+}
+
+/* ===== Projects and skills (Grid) ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-card {
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--bar-alt);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card p {
+  margin-bottom: 0;
+}
+
+/* ===== Photo gallery ===== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery figure {
+  margin: 0;
+  width: 220px;
+  text-align: center;
+}
+
+.gallery img {
+  border: 2px solid var(--border);
+  border-radius: 4px;
+}
+
+.gallery figcaption {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* Viewer mode: script.js adds .viewer so only the active photo shows */
+.gallery.viewer figure {
+  display: none;
+  width: 100%;
+  max-width: 420px;
+}
+
+.gallery.viewer figure.active {
+  display: block;
+}
+
+.gallery.viewer img {
+  max-height: 520px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-controls[hidden] {
+  display: none;
+}
+
+.gallery-status {
+  min-width: 8rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--heading);
+}
+
+/* ===== Table ===== */
+.table-wrap {
+  overflow-x: auto;   /* the table scrolls inside this box, never the whole page */
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.6rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--bar);
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--surface-alt);
+}
+
+/* ===== Media ===== */
+#media video,
+#media audio {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem 0;
+}
+
+#media video {
+  max-width: 640px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+}
+
+/* ===== Form ===== */
+.demo-note {
+  display: inline-block;
+  background-color: var(--surface-alt);
+  border: 2px dashed var(--bar-alt);
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem;
+  border: 2px solid #7d8da1;
+  border-radius: 4px;
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.error {
+  display: block;
+  color: var(--error);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+.error:empty {
+  display: none;
+}
+
+button {
+  background-color: var(--bar-alt);
+  color: #ffffff;
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--gold);
+  color: #14315c;
+}
+
+/* Form preview box shown after valid input */
+.form-result:empty {
+  display: none;
+}
+
+.form-result {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--ok);
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.form-result h3 {
+  margin-top: 0;
+  color: var(--ok);
+}
+
+.form-result dt {
+  font-weight: bold;
+}
+
+.form-result dd {
+  margin: 0 0 0.6rem 0;
+  white-space: pre-wrap;   /* keeps the line breaks the visitor typed */
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bar);
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #ffd24d;
+}
+
+/* ===== Responsive: tablets and phones ===== */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Header: brand and buttons on row one, links on their own row below */
+  .topbar-actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-nav a {
+    padding: 0.7rem 0.8rem;       /* bigger tap targets */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  /* Mobile menu: only collapse it when JavaScript is running (.js-nav) */
+  .js-nav .menu-toggle {
+    display: inline-block;
+  }
+
+  .js-nav .site-nav:not(.open) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section {
+    padding: 1rem;
+  }
+
+  .hero-buttons .btn,
+  button[type="submit"] {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery figure {
+    width: 100%;
+    max-width: 280px;
+  }
+}
